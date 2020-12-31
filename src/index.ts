@@ -47,12 +47,12 @@ app.listen(port, () => {
         })
       );
 
-      const users = await client.users.$get({});
-      console.log(users); // { list: [ { id: 10, group: 100, name: 'foo' } ] }
-      const ids = await client.users.$get({ query: { fields: 'id' } });
-      console.log(ids); // { list: [ { id: 10 } ] }
-      const names = await client.users.$get({ query: { fields: 'name' } });
-      console.log(names); // { list: [ { name: 'foo' } ] }
+      const users = await client.users.get({});
+      console.log(users.body); // { list: [ { id: 10, group: 100, name: 'foo' } ] }
+      const ids = await client.users.get({ query: { fields: 'id' } });
+      console.log(ids.body); // { list: [ { id: 10 } ] }
+      const names = await client.users.get({ query: { fields: 'name' } });
+      console.log(names.body); // { list: [ { name: 'foo' } ] }
     }
 
     {
@@ -63,12 +63,12 @@ app.listen(port, () => {
         })
       );
 
-      const users = await client.users.$get({});
-      console.log(users); // { list: [ { id: 20, group: 200, name: 'bar' } ] }
-      const ids = await client.users.$get({ query: { fields: 'id' } });
-      console.log(ids); // { list: [ { id: 20, group: 200, name: 'bar' } ] }
-      const names = await client.users.$get({ query: { fields: 'name' } });
-      console.log(names); // { list: [ { id: 20, group: 200, name: 'bar' } ] }
+      const users = await client.users.get({});
+      console.log(users.body); // { list: [ { id: 20, group: 200, name: 'bar' } ] }
+      const ids = await client.users.get({ query: { fields: 'id' } });
+      console.log(ids.body); // { list: [ { id: 20, group: 200, name: 'bar' } ] }
+      const names = await client.users.get({ query: { fields: 'name' } });
+      console.log(names.body); // { list: [ { id: 20, group: 200, name: 'bar' } ] }
     }
   })();
 });
