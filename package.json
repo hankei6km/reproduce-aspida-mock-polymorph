@@ -6,7 +6,7 @@
   "scripts": {
     "api:build": "aspida && aspida-mock",
     "build": "tsc -p .",
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "start": "aspida && aspida-mock && nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
   },
   "dependencies": {
     "@aspida/node-fetch": "^1.1.1",
